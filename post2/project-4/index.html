@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 4 : Wrangle &amp; Analyze WeRateDogs Data | Rakibul Sitab</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="The purpose of this project is to put into practice what I’ve learned in Data wrangling data course which is part of Udacity Data Analysis Nanodegree program.">
+    <meta name="generator" content="Hugo 0.79.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://rakibul-sitab.github.io/rakibul/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 4 : Wrangle &amp; Analyze WeRateDogs Data" />
+<meta property="og:description" content="The purpose of this project is to put into practice what I’ve learned in Data wrangling data course which is part of Udacity Data Analysis Nanodegree program." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rakibul-sitab.github.io/rakibul/post2/project-4/" />
+<meta property="article:published_time" content="2021-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-05-20T00:00:00+00:00" /><meta property="og:site_name" content="Rakibul Sitab" />
+<meta itemprop="name" content="Project 4 : Wrangle &amp; Analyze WeRateDogs Data">
+<meta itemprop="description" content="The purpose of this project is to put into practice what I’ve learned in Data wrangling data course which is part of Udacity Data Analysis Nanodegree program.">
+<meta itemprop="datePublished" content="2021-05-20T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-05-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="881">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 4 : Wrangle &amp; Analyze WeRateDogs Data"/>
+<meta name="twitter:description" content="The purpose of this project is to put into practice what I’ve learned in Data wrangling data course which is part of Udacity Data Analysis Nanodegree program."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://rakibul-sitab.github.io/rakibul/images/pic264.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://rakibul-sitab.github.io/rakibul/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Rakibul Sitab
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post3/" title="Case study page">
+              Case study
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post/" title="Practicum100 Projects page">
+              Practicum100 Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post2/" title="Udacity Projects page">
+              Udacity Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+<a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="link-transition gitlab link dib z-999 pt3 pt0-l mr1" title="Gitlab link" rel="noopener" aria-label="follow on Gitlab——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z"></path></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 4 : Wrangle &amp; Analyze WeRateDogs Data</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              The purpose of this project is to put into practice what I’ve learned in Data wrangling data course which is part of Udacity Data Analysis Nanodegree program.
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        UDACITY PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://rakibul-sitab.github.io/rakibul/post2/project-4/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://rakibul-sitab.github.io/rakibul/post2/project-4/&amp;text=Project%204%20:%20Wrangle%20&amp;%20Analyze%20WeRateDogs%20Data" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://rakibul-sitab.github.io/rakibul/post2/project-4/&amp;title=Project%204%20:%20Wrangle%20&amp;%20Analyze%20WeRateDogs%20Data" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 4 : Wrangle &amp; Analyze WeRateDogs Data</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-05-20T00:00:00Z">May 20, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The dataset that we will be wrangling (and analyzing and visualizing) is the tweet archive of Twitter user dog rates, also known as WeRateDogs. WeRateDogs is a Twitter account that rates people&rsquo;s dogs with a humorous comment about the dog. These ratings almost always have a denominator of 10. The numerators, though? Almost always greater than 10. 11/10, 12/10, 13/10, etc. Why? Because &ldquo;they&rsquo;re good dogs Brent.&rdquo; WeRateDogs has over 4 million followers
+and has received international media coverage.</p>
+<p><strong>We&rsquo;re going to study:</strong></p>
+<p>Wrangling steps:</p>
+<ol>
+<li>Gathering data</li>
+<li>Assessing data</li>
+<li>Cleaning data</li>
+</ol>
+<p><strong>Gathering data:</strong></p>
+<ol>
+<li>The WeRateDogs Twitter archive. This file have been given on hand. This file was downloaded manually by clicking the following link: twitter_archive_enhanced.csv</li>
+<li>The tweet image predictions, i.e., what breed of dog (or other object, animal, etc.) is present in each tweet according to a neural network. This file (image_predictions.tsv) is hosted on Udacity&rsquo;s servers and have been downloaded programmatically using the Requests library and the following URL: <a href="https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_imagepredictions/image-predictions.tsv">https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad_imagepredictions/image-predictions.tsv</a></li>
+<li>Each tweet&rsquo;s retweet count and favorite (&ldquo;like&rdquo;) count at minimum, and any additional data find interesting. This is the resulting data from twitter_api.py. We proceed with the following part of &ldquo;Gathering Data for this Project&rdquo; on the Project Details page: &ldquo;Then read this tweet_json.txt file line by line into a pandas DataFrame with (at minimum) tweet ID, retweet count, and favorite
+count.</li>
+</ol>
+<p><strong>Assessing data:</strong></p>
+<p>After gathering, the data is assessed for tidiness and quality as follows:</p>
+<p><strong>Enhanced Twitter Archive:</strong></p>
+<p>Quality in twitter archive:</p>
+<p>• timestamp and retweeted_status_timestamp must be of datetime instead of the object.</p>
+<p>• There is no duplicated row founded.</p>
+<p>• Missing values are present in columns in_reply_to_status_id, in_reply_to_user_id,
+retweeted_status_id , retweeted_status_user_id, retweeted_status_timestamp, expanded_urls.</p>
+<p>• Some of the values in rating_numerator and rating_denominator columns incosistent
+values not acceptable values. For example rating_denominator max value is 170 and
+min value is 0.</p>
+<p>• 639 expanded URLs which contain more than one URL address.</p>
+<p>• Dog &lsquo;stage&rsquo; classification (doggo, floofer, pupper or puppo) should be one column.</p>
+<p>• tweet id 835246439529840640 has a rating of denominator = 0</p>
+<p>• Crazy names found for dogs - &lsquo;infuriating&rsquo;, &lsquo;just&rsquo;, &lsquo;life&rsquo;, &lsquo;light&rsquo;, &lsquo;mad&rsquo;, &lsquo;my&rsquo;, &lsquo;not&rsquo;, &lsquo;officially&rsquo;, &lsquo;old&rsquo;, &lsquo;one&rsquo;, &lsquo;quite&rsquo;, &lsquo;space&rsquo;, &lsquo;such&rsquo;, &lsquo;the&rsquo;, &lsquo;this&rsquo;, &lsquo;unacceptable&rsquo;, &lsquo;very&rsquo;</p>
+<p><strong>Tidiness in twitter archive:</strong></p>
+<ol>
+<li>
+<p>This twitter archive is like a main base table with the above attributes, there will be other attributes other data frames. Hence we need to join all other data frames to get a final data frame.</p>
+</li>
+<li>
+<p>Dog &lsquo;stage&rsquo; classification (doggo, floofer, pupper or puppo) should be one column.</p>
+</li>
+<li>
+<p>Some dogs have more than one category assigned.</p>
+</li>
+</ol>
+<p><strong>Image Predictions asses:</strong></p>
+<p><strong>Quality &amp; Tidiness Issues in Image Predictions:</strong></p>
+<ol>
+<li>
+<p>The dataset has 2075 row, 12 columns.</p>
+</li>
+<li>
+<p>Column names are confusing and do not give much information about the content.</p>
+</li>
+<li>
+<p>Dog breeds contain underscores, and have different case formatting.</p>
+</li>
+<li>
+<p>66 jpg URL duplicates were found.</p>
+</li>
+<li>
+<p>Dataset should be merged with the twitter archive dataset.</p>
+</li>
+<li>
+<p>Outliers have been detected in the rating_numerator and rating_denominator columns.</p>
+</li>
+</ol>
+<p><strong>Twitter API Data Assess:</strong></p>
+<p><strong>Quality &amp; Tidiness Issues in Twitter API Data:</strong></p>
+<ol>
+<li>
+<p>twitter API data has 2354 rows,3 columns.</p>
+</li>
+<li>
+<p>dataset should be merged with the twitter archive dataset.</p>
+</li>
+<li>
+<p>Outliers have been detected in the favorite_count and retweet_count columns</p>
+</li>
+</ol>
+<p><strong>Cleaning data</strong></p>
+<p><strong>Enhanced Twitter Archive:</strong></p>
+<ol>
+<li>
+<p>As a first step, a copy of dataset is created for use throughout the cleaning exercise. As some of the gathered tweets are replies and retweets, we remove them together with other unnecessary columns.</p>
+</li>
+<li>
+<p>The upper and lower limits of outliers are determined and remove the outliers for rating_numerator rating_denominator columns using IQR rule.</p>
+</li>
+<li>
+<p>Tweet_id column have been converted to string and timestamp have been converted to datetime data type.</p>
+</li>
+<li>
+<p>The data have been removed which have rating denominator greater than 10.</p>
+</li>
+<li>
+<p>Dog classification (doggo, floofer, pupper or puppo) columns have been made into one single column named dog_type.</p>
+</li>
+</ol>
+<p><strong>Image Predictions asses:</strong></p>
+<ol>
+<li>
+<p>Column labels have changed to suitable names.</p>
+</li>
+<li>
+<p>The underscore has been removed and capitalized the first letter of each word for columns relating to dog’s breed.</p>
+</li>
+<li>
+<p>A function get breed have been built to determine dog breed and merging into single columns.</p>
+</li>
+</ol>
+<p><strong>Twitter API clean:</strong></p>
+<ol>
+<li>
+<p>The upper and lower limits of outliers are determined and remove the outliers for favorite_count and retweet_count columns using IQR rule.</p>
+</li>
+<li>
+<p>Final three dataframes twitter_archive_clean, image_prediction_df_clean, twitter_api are merged together.</p>
+</li>
+</ol>
+<p>Four insights will be discussed briefly in the below.</p>
+<ol>
+<li>
+<p>Top Dog type values based on the count</p>
+</li>
+<li>
+<p>Top dog name values based on the count</p>
+</li>
+<li>
+<p>Rating by dog type</p>
+</li>
+<li>
+<p>10 most popular dog breeds</p>
+</li>
+</ol>
+<p><strong>Insight one: Top Dog type values based on the count.</strong></p>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic265.png"/> 
+</figure>
+
+<p>There have four dog types i.e. pupper, doggo, puppo and floofer.The pupper are the most tweeted by audience. This means pupper type dogs are most popular. Many dog types are unknown according to the datasets.The floopfer are the least popular dog type.</p>
+<p><strong>Insight two: Top dog name values based on the count</strong>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic266.png"/> 
+</figure>
+</p>
+<p>Many dogs are unnamed as people didn’t reveal their name. But the most frequent one Charlie and Oliver like human name.</p>
+<p><strong>Insight three: Rating by dog type</strong>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic267.png"/> 
+</figure>
+</p>
+<p>Pupper is most favorite dogs type and the floofer is the least . People like more doggo type than puppo type.</p>
+<p><strong>Insight four: 10 most popular dog breeds</strong>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic268.png"/> 
+</figure>
+</p>
+<p>Golden Retriever breed are the most popular among all dog’s breed. Labrador Retriever, Pembroke and Chihuahua have almost same popularity</p>
+<p>link : <a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio/tree/main/Udacity%20projects/Project%204%20:%20Wrangle%20%26%20Analyze%20WeRateDogs%20Data">https://github.com/rakibul-sitab/Data-Analyst-Portfolio/tree/main/Udacity%20projects/Project%204%20:%20Wrangle%20%26%20Analyze%20WeRateDogs%20Data</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://rakibul-sitab.github.io/rakibul/" >
+    &copy;  Rakibul Sitab 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+<a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="link-transition gitlab link dib z-999 pt3 pt0-l mr1" title="Gitlab link" rel="noopener" aria-label="follow on Gitlab——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z"></path></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

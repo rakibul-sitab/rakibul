@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 2 : Investigate a Dataset (TMDb Movie Data) | Rakibul Sitab</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset.">
+    <meta name="generator" content="Hugo 0.79.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://rakibul-sitab.github.io/rakibul/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 2 : Investigate a Dataset (TMDb Movie Data)" />
+<meta property="og:description" content="We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rakibul-sitab.github.io/rakibul/post2/project-2/" />
+<meta property="article:published_time" content="2021-02-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-23T00:00:00+00:00" /><meta property="og:site_name" content="Rakibul Sitab" />
+<meta itemprop="name" content="Project 2 : Investigate a Dataset (TMDb Movie Data)">
+<meta itemprop="description" content="We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset.">
+<meta itemprop="datePublished" content="2021-02-23T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-02-23T00:00:00+00:00" />
+<meta itemprop="wordCount" content="742">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 2 : Investigate a Dataset (TMDb Movie Data)"/>
+<meta name="twitter:description" content="We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://rakibul-sitab.github.io/rakibul/images/pic185.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://rakibul-sitab.github.io/rakibul/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Rakibul Sitab
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post3/" title="Case study page">
+              Case study
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post/" title="Practicum100 Projects page">
+              Practicum100 Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibul-sitab.github.io/rakibul/post2/" title="Udacity Projects page">
+              Udacity Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+<a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="link-transition gitlab link dib z-999 pt3 pt0-l mr1" title="Gitlab link" rel="noopener" aria-label="follow on Gitlab——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z"></path></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 2 : Investigate a Dataset (TMDb Movie Data)</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset.
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        UDACITY PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://rakibul-sitab.github.io/rakibul/post2/project-2/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://rakibul-sitab.github.io/rakibul/post2/project-2/&amp;text=Project%202%20:%20Investigate%20a%20Dataset%20%28TMDb%20Movie%20Data%29" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://rakibul-sitab.github.io/rakibul/post2/project-2/&amp;title=Project%202%20:%20Investigate%20a%20Dataset%20%28TMDb%20Movie%20Data%29" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 2 : Investigate a Dataset (TMDb Movie Data)</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-02-23T00:00:00Z">February 23, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>We choose the TMDb movie data set for data analysis. This data set contains information about 10,000 movies collected from The Movie Database (TMDb),we would like to find interesting patterns in the dataset.</p>
+<p><strong>We&rsquo;re going to study:</strong></p>
+<ol>
+<li>What is the average runtime/budget/revenue of all movies?</li>
+<li>Relation between Budget Vs Runtime and Revenue Vs Budget?</li>
+<li>Which are the successful genres?</li>
+<li>Which genres are most popular from year to year?</li>
+<li>Movie with Longest And Shortest Runtime?</li>
+<li>Which Month Released Highest Number Of Movies In All Of The Years? And Which Month Made The Highest Average Revenue?</li>
+<li>Movie with highest And lowest revenue?</li>
+</ol>
+<p><strong>Step 1. Download the data and prepare it for analysis</strong></p>
+<ol>
+<li>The movies data set has 10866 rows and 9 columns</li>
+<li>There have no missing and duplicate values observed.And all the data types are correct.</li>
+</ol>
+<p><strong>Step 2. Exploratory data analysis:</strong></p>
+<h5 id="q1--what-is-the-average-runtimebudgetrevenue-of-all-movies">Q1 : What is the average runtime/budget/revenue of all movies?</h5>
+<p>Average runtime of movies is approx. 102 minutes,Average movie budget is 40 millions and average revenue is approx. one billion.So average movie invest to profit ratio is approx. 2.5 times.But it is not same for all.</p>
+<p><figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic186.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic187.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic188.jpg"/> 
+</figure>
+</p>
+<h5 id="q2--relation-between-budget-vs-runtime-and-revenue-vs-budget">Q2 : Relation between Budget Vs Runtime and Revenue Vs Budget?</h5>
+<ol>
+<li>
+<p>There is a positive relation observed between budget and runtime.Most of the movies runtime is greater than 50 minutes and less than 200 minutes.Though there is a positive correlation, but higher run time of movies leads to low budget.It could be the editing factors and low optimised. Movies between 150-200 minutes leads to higher budget.</p>
+</li>
+<li>
+<p>There is a positive relation observed between revenue and budget.Most of the movies budget is not greater than 100 millions and average revenue is approx. one billion.Higher run budget movies leads to high revenue as well. For example, Two hundred million budget movies brings approx. 1.5 billions.</p>
+</li>
+</ol>
+<p><figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic189.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic190.jpg"/> 
+</figure>
+</p>
+<h5 id="q3--which-are-the-successful-genres">Q3 : Which are the successful genres?</h5>
+<p>The top six genres are Drama, comedy, thriller, action, adventure and romance.
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic191.jpg"/> 
+</figure>
+</p>
+<h5 id="q4--which-genres-are-most-popular-from-year-to-year">Q4 : Which genres are most popular from year to year?</h5>
+<p>Drama was most popular in the early years.But with the time it gets down trend.In the recent years, Drama is no longer popular genre for people.People are more interested in action genre in recent years.</p>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic192.jpg"/> 
+</figure>
+
+<h5 id="q5--which-month-released-highest-number-of-movies-in-all-of-the-years-and-which-month-made-the-highest-average-revenue">Q5 : Which Month Released Highest Number Of Movies In All Of The Years? And Which Month Made The Highest Average Revenue?</h5>
+<p>Highest number of movies were released in the month of September and December. And highest revenue is earned in June,May and November.
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic193.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic194.jpg"/> 
+</figure>
+</p>
+<h5 id="q6--movie-with-longest-and-shortest-runtime">Q6 : Movie with Longest And Shortest Runtime?</h5>
+<p><strong>Top 5 longest movies are:</strong>*</p>
+<ol>
+<li>carlos</li>
+<li>cleopatra</li>
+<li>heaven&rsquo;s gate</li>
+<li>lawrence of arabia</li>
+<li>gods and generals</li>
+<li>carlos is the longest movie which is close to 340 minutes.</li>
+</ol>
+<p><strong>Top 5 shortest movies are:</strong></p>
+<ol>
+<li>kid&rsquo;s story</li>
+<li>mickey&rsquo;s christmas carol</li>
+<li>dr. horrible&rsquo;s sing along blog</li>
+<li>louis C.K at the beacon theater</li>
+<li>winnie the pooh</li>
+</ol>
+<p>kid&rsquo;s story is less than 20 minutes whereas louis C.K at the beacon theater and winnie the pooh is around 60 minutes.</p>
+<p><figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic195.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic196.jpg"/> 
+</figure>
+</p>
+<h5 id="q7--movie-with-highest-and-lowest-revenue">Q7 : Movie with highest And lowest Revenue?</h5>
+<p><strong>Top high revenue movies are:</strong></p>
+<ol>
+<li>Avatar</li>
+<li>star wars</li>
+<li>titanic</li>
+<li>the avengers</li>
+<li>jurrasic world</li>
+</ol>
+<p>Avatar earned almost two billion eight hundred million which is higher than any other movies in the given time period</p>
+<p><strong>Top low revenue movies are:</strong></p>
+<ol>
+<li>shattered glass</li>
+<li>mallrats</li>
+<li>dr. horrible&rsquo;s sing along blog</li>
+<li>bordello of blood</li>
+<li>kid&rsquo;s story</li>
+</ol>
+<p>The lowest revenue movies are suspicious.For example shattered glass and mallrats earned 2$.This data is not acceptable in reality.There might be some information missing.</p>
+<p><figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic197.jpg"/> 
+</figure>
+
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic198.jpg"/> 
+</figure>
+</p>
+<h5 id="step-3-test-the-following-hypothesis">Step 3. Test the following hypothesis</h5>
+<p><strong>Test : Average movie revenue is not higher in may than june all over the time period</strong></p>
+<p>Testing: Let&rsquo;s compare the sample means for user score:</p>
+<ol>
+<li>H0 - the sample means have no difference.</li>
+<li>H1 - the sample means are different.</li>
+<li>alpha - 0.05</li>
+</ol>
+<figure>
+    <img src="https://rakibul-sitab.github.io/rakibul/images/pic199.jpg"/> 
+</figure>
+
+<p>From our hypothesis, it is clear that the average movie revenue is higher in June than may all over the time period.</p>
+<p><strong>Limitations:</strong></p>
+<ol>
+<li>The lowest revenue movies are suspicious.For example shattered glass and mallrats earned 2 unit currency.This data is not acceptable in reality.There might be some information missing.</li>
+<li>The budget and revenue columns did not have a currency specified so there may be some differences due to fluctuating exchange rates.</li>
+<li>Rows with NaN values were dropped, hence a lot of key data might have been lost in the process.</li>
+<li>People having higher expectations gives less probability of meeting their expectations. Even if the movie was worth, people&rsquo;s high expectations would lead in biased results ultimately effecting the profits.</li>
+</ol>
+<p>link : <a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio/blob/main/Udacity%20projects/Project%202%20:%20Investigate%20a%20Dataset%20(TMDb%20Movie%20Data)README.md/Investigate_TMDb_Movies_first_version.ipynb">https://github.com/rakibul-sitab/Data-Analyst-Portfolio/blob/main/Udacity%20projects/Project%202%20:%20Investigate%20a%20Dataset%20(TMDb%20Movie%20Data)README.md/Investigate_TMDb_Movies_first_version.ipynb</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://rakibul-sitab.github.io/rakibul/" >
+    &copy;  Rakibul Sitab 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+<a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="link-transition gitlab link dib z-999 pt3 pt0-l mr1" title="Gitlab link" rel="noopener" aria-label="follow on Gitlab——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M29.782 199.732L256 493.714 8.074 309.699c-6.856-5.142-9.712-13.996-7.141-21.993l28.849-87.974zm75.405-174.806c-3.142-8.854-15.709-8.854-18.851 0L29.782 199.732h131.961L105.187 24.926zm56.556 174.806L256 493.714l94.257-293.982H161.743zm349.324 87.974l-28.849-87.974L256 493.714l247.926-184.015c6.855-5.142 9.711-13.996 7.141-21.993zm-85.404-262.78c-3.142-8.854-15.709-8.854-18.851 0l-56.555 174.806h131.961L425.663 24.926z"></path></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

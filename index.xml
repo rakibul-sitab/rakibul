@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aspiring Data Analyst Portfolio on Rakibul Sitab</title>
+    <link>https://rakibulsitab.com/</link>
+    <description>Recent content in Aspiring Data Analyst Portfolio on Rakibul Sitab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rakibulsitab.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 4 : Developed Neo4J Database for Ireland Travelling Company.</title>
+      <link>https://rakibulsitab.com/post/project-4/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-4/</guid>
+      <description>Case Scenario :
+Mr. Fattman has recently arrived in Ireland, and his first stop was in Dublin. He plans to go around Ireland and see the country&amp;rsquo;s attractions, and his first visit will be to the province of Munster. Therefore, he started brainstorming his trips by gathering information, such as the major attractions to visit, hotels, and modes of transportation. So he is looking for a database where he can search all the information in one place.</description>
+    </item>
+    
+    <item>
+      <title>Project 5 : E-commerce product range analysis using Python libraries.</title>
+      <link>https://rakibulsitab.com/post/project-5/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-5/</guid>
+      <description>Case scenario :
+Super store supplies have contacted to data consulting firm. To boost their sales and targeting customers, they are interested to do a product range analysis. They want to see some KPI , such as revenue, average check and so on.
+Dataset :
+The dataset contains the transaction history of an online store that sells household goods and have been collected from Kaggle.The dataset have 541909 rows and 5268 duplicated rows.</description>
+    </item>
+    
+    <item>
+      <title>Project 3 : Customer segmentation for target market strategies using Tableau</title>
+      <link>https://rakibulsitab.com/post/project-3/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-3/</guid>
+      <description>Case scenerio :
+Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.
+RFM :
+For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent.</description>
+    </item>
+    
+    <item>
+      <title>Project 2: Build multiclass text classification model for product category using AutoML(DataRobot).</title>
+      <link>https://rakibulsitab.com/post/project-2/</link>
+      <pubDate>Thu, 25 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-2/</guid>
+      <description>Business problem:
+Customers are the most important for any business. In a large company, thousands of complaints arrive and must be handled properly. Each company has specific specialists who are responsible for particular problems/complaints. When a complaint comes, it must be transferred to the appropriate department. Auto ML could solve this problem and identify product categories from large text complaints.
+Dataset :
+•	Dataset contains more than two million customer complaints about consumer financial products.</description>
+    </item>
+    
+    <item>
+      <title>Project 1: Build best performing machine learning models for credit card fraud detection</title>
+      <link>https://rakibulsitab.com/post/project-1/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-1/</guid>
+      <description>Business problem:
+Credit card companies can detect fraudulent credit card transactions, preventing customers from being charged for products they did not purchase. Data Science and Machine Learning can be used to solve this type of problem. This project aims to demonstrate to build a best performing machine learning models to detect Credit Card Fraud.
+Dataset:
+The Dataset collected via Kaggle which covers credit card transactions made by European cardholders in September 2013.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://rakibulsitab.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/about/</guid>
+      <description>I&amp;rsquo;m a selfie expert based in Western Europe, specifically Ireland. I moved from optical technology to data science, a huge career transition for me. In the field of data science, I have one diploma in Data analysis from Yandex practicum 100 under my belt. In addition, I am currently pursuing my second master&amp;rsquo;s degree in Data Analytics and will graduate in early January 2023. I explored several data science small and big projects for my diploma and master&amp;rsquo;s degree using real-world datasets to expand my knowledge in data analytics.</description>
+    </item>
+    
+    <item>
+      <title>Certifications</title>
+      <link>https://rakibulsitab.com/certifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/certifications/</guid>
+      <description> </description>
+    </item>
+    
+  </channel>
+</rss>

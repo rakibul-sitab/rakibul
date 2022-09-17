@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scene on Rakibul Sitab</title>
+    <link>https://rakibulsitab.com/tags/scene/</link>
+    <description>Recent content in scene on Rakibul Sitab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://rakibulsitab.com/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 1: Build best performing machine learning models for credit card fraud detection</title>
+      <link>https://rakibulsitab.com/post/project-1/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-1/</guid>
+      <description>Business problem:
+Credit card companies can detect fraudulent credit card transactions, preventing customers from being charged for products they did not purchase. Data Science and Machine Learning can be used to solve this type of problem. This project aims to demonstrate to build a best performing machine learning models to detect Credit Card Fraud.
+Dataset:
+The Dataset collected via Kaggle which covers credit card transactions made by European cardholders in September 2013.</description>
+    </item>
+    
+  </channel>
+</rss>

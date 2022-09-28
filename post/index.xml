@@ -8,16 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://rakibulsitab.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 4 : Developed Neo4J Database for Ireland Travelling Company.</title>
-      <link>https://rakibulsitab.com/post/project-4/</link>
-      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://rakibulsitab.com/post/project-4/</guid>
-      <description>Case Scenario :
-Mr. Fattman has recently arrived in Ireland, and his first stop was in Dublin. He plans to go around Ireland and see the country&amp;rsquo;s attractions, and his first visit will be to the province of Munster. Therefore, he started brainstorming his trips by gathering information, such as the major attractions to visit, hotels, and modes of transportation. So he is looking for a database where he can search all the information in one place.</description>
-    </item>
-    
-    <item>
       <title>Project 5 : E-commerce product range analysis using Python libraries.</title>
       <link>https://rakibulsitab.com/post/project-5/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
@@ -27,6 +17,16 @@ Mr. Fattman has recently arrived in Ireland, and his first stop was in Dublin. H
 Super store supplies have contacted to data consulting firm. To boost their sales and targeting customers, they are interested to do a product range analysis. They want to see some KPI , such as revenue, average check and so on.
 Dataset :
 The dataset contains the transaction history of an online store that sells household goods and have been collected from Kaggle.The dataset have 541909 rows and 5268 duplicated rows.</description>
+    </item>
+    
+    <item>
+      <title>Project 4 : Developed Neo4J Database for Ireland Travelling Company.</title>
+      <link>https://rakibulsitab.com/post/project-4/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://rakibulsitab.com/post/project-4/</guid>
+      <description>Case Scenario :
+Mr. Fattman has recently arrived in Ireland, and his first stop was in Dublin. He plans to go around Ireland and see the country&amp;rsquo;s attractions, and his first visit will be to the province of Munster. Therefore, he started brainstorming his trips by gathering information, such as the major attractions to visit, hotels, and modes of transportation. So he is looking for a database where he can search all the information in one place.</description>
     </item>
     
     <item>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 3 : Customer segmentation for target market strategies using Tableau | Rakibul Sitab</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Case scenerio :
+Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.
+RFM :
+For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent.">
+    <meta name="generator" content="Hugo 0.102.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://rakibulsitab.com/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 3 : Customer segmentation for target market strategies using Tableau" />
+<meta property="og:description" content="Case scenerio :
+Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.
+RFM :
+For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rakibulsitab.com/post/project-3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-09-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-01T00:00:00+00:00" /><meta property="og:site_name" content="Rakibul Sitab" />
+
+<meta itemprop="name" content="Project 3 : Customer segmentation for target market strategies using Tableau">
+<meta itemprop="description" content="Case scenerio :
+Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.
+RFM :
+For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent."><meta itemprop="datePublished" content="2022-09-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-09-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="759">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 3 : Customer segmentation for target market strategies using Tableau"/>
+<meta name="twitter:description" content="Case scenerio :
+Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.
+RFM :
+For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  <header class="cover bg-top" style="background-image: url('https://rakibulsitab.com/images/jpg_23.png');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://rakibulsitab.com/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Rakibul Sitab
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibulsitab.com/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibulsitab.com/certifications/" title="Certifications page">
+              Certifications
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://rakibulsitab.com/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.xing.com/profile/Rakibul_Sitab/cv" target="_blank" class="xing ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="xing link" rel="noopener" aria-label="follow on xing——Opens in a new window">
+      
+        xing
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 3 : Customer segmentation for target market strategies using Tableau</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://rakibulsitab.com/post/project-3/&amp;title=Project%203%20:%20Customer%20segmentation%20for%20target%20market%20strategies%20using%20Tableau" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 3 : Customer segmentation for target market strategies using Tableau</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-09-01T00:00:00Z">September 1, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>Case scenerio :</strong></p>
+<p>Super store supplies intend to spend on marketing again. This time, they wish to maximize their profit through a targeted approach. In this regard, the marketing team has requested the data expert team to provide some insights on customer behavior in 2017.</p>
+<p><strong>RFM :</strong></p>
+<p>For the segmentation, RFM analysis have been used in this project. RFM analysis is a data driven customer behavior segmentation technique that is mostly used to segment customers based on their last purchase, how often they purchased and how much they spent.</p>
+<figure><img src="https://rakibulsitab.com/images/jpg_24.png"/>
+</figure>
+
+<p><strong>Dataset :</strong></p>
+<p>Superstore data set have been used from Tableau. It contains information about products, sales, profits, and so on with 20 fields and 9994 rows.</p>
+<p><strong>Customer have been segmented into 7 groups:</strong></p>
+<ol>
+<li>
+<p>Whipped Cream : Standard customer and purchased very recently.</p>
+</li>
+<li>
+<p>Champion : Purchased recently, are frequent buyers and higher spenders.</p>
+</li>
+<li>
+<p>Loyal : These customers orders regularly.</p>
+</li>
+<li>
+<p>Potential : They purchased recently, spent a significant amount of money, and are repeat buyers.</p>
+</li>
+<li>
+<p>Promising : This customer segment was a potential loyalist a few months ago. Spends frequently with a good amount.But the last purchase was few months ago.</p>
+</li>
+<li>
+<p>Needs attention :  They purchased few months ago, atleast 2 months ago.</p>
+</li>
+<li>
+<p>At Risk : This segment is almost lost.They purchased few months ago with smaller frequency and monetary value.</p>
+</li>
+</ol>
+<p><strong>Yearly update (2017):</strong></p>
+<figure><img src="https://rakibulsitab.com/images/jpg_25.png"/>
+</figure>
+
+<ol>
+<li>
+<p>Total sales was 733K.</p>
+</li>
+<li>
+<p>Yearly profit ration was 12.7%.</p>
+</li>
+<li>
+<p>Total 12K quantity have been sold.</p>
+</li>
+<li>
+<p>Yearly average discount was 15.6%.</p>
+</li>
+</ol>
+<p><strong>Who is our top rated customer ?</strong></p>
+<ol>
+<li>They bring about 276K out of 733K and are under the whipped cream group. Seattle, New York City, San Francisco, and Los Angeles are the cities where most of the sales comes from. Additionally, the states of Chicago (profit: €-2.9K) and Philadelphia have experienced some notable losses (Profit : €-1.5K).</li>
+</ol>
+<figure><img src="https://rakibulsitab.com/images/jpg_26.png"/>
+</figure>
+
+<ol start="2">
+<li>
+<p>In terms of frequency and monetary value, this customer category can be divided into three major clusters. The cluster graph&rsquo;s upper right quadrant zone, which is depicted in the bottom left graph of the above image, contains the top customers. But out of all customers, Emily Phan (17 times purchased) and Adrian Barton (Total €14K purchases) are the top customers among all customers.</p>
+</li>
+<li>
+<p>Emily Phan made a total of five different purchases worth €5,478 in the USA, the last of which was made 12 days ago. Adrian Barton made purchases from five different stores. He purchased 41 days ago. His ten purchases brought in a total profit of €341.2 for super store supplies.</p>
+</li>
+</ol>
+<p><strong>Who is our loyal customer ?</strong></p>
+<figure><img src="https://rakibulsitab.com/images/jpg_27.png"/>
+</figure>
+
+<p>Out of $733K, loyal customers contribute a total of €129K. Seattle, San Francisco, Los Angeles, and New York City are the sales hubs. Both Louisville and Burlington suffered some shocking losses. The two most devoted consumers in this group are Ken Black (12 purchases) and Raymond Buch (€15K purchases).</p>
+<p><strong>Which customer has the potential to buy more?</strong></p>
+<figure><img src="https://rakibulsitab.com/images/jpg_28.png"/>
+</figure>
+
+<p>They recently purchased, spent a considerable amount of money, and are repeat customers. This group brings in a total of €60,000. The majority of sales are concentrated in Seattle, Los Angeles, and New York City. Some notable losses have been reported in Chicago and Jacksonville. Based on their purchasing habits, this group can be separated into two cluster groups. Becky Martin (bought €12k) is the top potential client in this category.</p>
+<p><strong>Which customers is likely to be churned?</strong></p>
+<p>They are in the group that need special attention. They bought it a couple months ago, at least two months ago. They are primarily concentrated in Seattle, San Francisco, Los Angeles, New York City, and Tyler. They bought 5 times on average, with an average monetary worth of €1000.</p>
+<figure><img src="https://rakibulsitab.com/images/jpg_29.png"/>
+</figure>
+
+<p><strong>Who have churned already?</strong></p>
+<p>We&rsquo;ve already lost this group. They bought it a few months earlier with a lower frequency and monetary value. They are largely centred in Los Angeles, New York City, and Decatur. They bought four times on average, with an average monetary worth of €1,000.</p>
+<figure><img src="https://rakibulsitab.com/images/jpg_30.png"/>
+</figure>
+
+<p><strong>Marketing Actionable Strategies:</strong></p>
+<p>Every customer is unique, and they should be treated differently, and marketing strategies should be different.</p>
+<ol>
+<li>
+<p>Whipped Cream : Limited time offers could be made.</p>
+</li>
+<li>
+<p>Champion : They can be early adopts of new products. Some rewards could be offered.</p>
+</li>
+<li>
+<p>Loyal : Higher value products could be upsell to them. They are the true reviewers.</p>
+</li>
+<li>
+<p>Promising and potential : Some coupon could be offered. They should bring back to the store as soon as possible.</p>
+</li>
+<li>
+<p>Need Attention : Limited time and personalized recommendation could be offered.</p>
+</li>
+<li>
+<p>At Risk : Some helpful resourced from website and personalized email could be sent.</p>
+</li>
+</ol>
+<p><strong>Link :</strong></p>
+<p><a href="https://public.tableau.com/app/profile/rakibul.islam.sitab/viz/CustomersegmentationusingRFManalysis/Dashboard1">https://public.tableau.com/app/profile/rakibul.islam.sitab/viz/CustomersegmentationusingRFManalysis/Dashboard1</a></p>
+<p><strong>RFM cheat sheet :</strong></p>
+<figure><img src="https://rakibulsitab.com/images/jpg_31.png"/>
+</figure>
+
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://rakibulsitab.com/" >
+    &copy;  Rakibul Sitab 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/rakibulsitab/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/rakibul-sitab/Data-Analyst-Portfolio" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.xing.com/profile/Rakibul_Sitab/cv" target="_blank" class="xing ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="xing link" rel="noopener" aria-label="follow on xing——Opens in a new window">
+      
+        xing
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
